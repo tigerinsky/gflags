@@ -12,6 +12,8 @@ then
     exit 1
 fi
 
+export LDFLAGS="${LDFLAGS} -lrt"
+
 cd $tmp_dir
 ./configure --prefix=${base_dir} --enable-shared=no && make && make install
 if [ $? -ne 0 ]
